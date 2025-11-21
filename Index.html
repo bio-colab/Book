@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السياسة، المجتمع، وأنت - الدليل الكامل</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    <style>
+        /* --- 1. المتغيرات اللونية (نظام الألوان) --- */
+        :root {
+            /* الألوان الرئيسية */
+            --navy-primary: #102A44;       /* أزرق كحلي عميق - للرصانة */
+            --blue-accent: #005691;        /* أزرق متوسط - للروابط والعناوين الفرعية */
+            --gold-accent: #C59848;        /* ذهبي رملي - للتمييز والفخامة */
+            
+            /* ألوان الصناديق (خلفيات فاتحة جداً + حدود ملونة + نصوص داكنة) */
+            --info-bg: #E3F2FD;
+            --info-border: #2196F3;
+            --info-text: #0D47A1;
+
+            --warn-bg: #FBE9E7;
+            --warn-border: #D84315;
+            --warn-text: #BF360C;
+
+            --highlight-bg: #FFF8E1;
+            --highlight-border: #FFC107;
+            --highlight-text: #5D4037;
+
+            /* النصوص والخلفيات */
+            --text-body: #2D3436;          /* رمادي داكن للقراءة المريحة */
+            --bg-page: #FFFFFF;
+            --bg-app: #525659;             /* خلفية التطبيق الخارجية */
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: var(--bg-app);
+            font-family: 'Amiri', 'IBM Plex Sans Arabic', serif;
+            color: var(--text-body);
+            direction: rtl;
+            line-height: 1.9;
+        }
+
+        a {
+            color: var(--blue-accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- 2. إعدادات الصفحة (A4) --- */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto 30px auto;
+            background: var(--bg-page);
+            padding: 25mm 20mm;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            overflow: hidden;
+            page-break-after: always;
+        }
+
+        /* --- 3. التايبوغرافيا --- */
+        h1, h2, .cover-title, .chapter-name {
+            font-family: 'Amiri', serif;
+            color: var(--navy-primary);
+        }
+        
+        h1 {
+            font-size: 30px;
+            border-bottom: 3px solid var(--gold-accent);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            width: fit-content;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            color: var(--navy-primary);
+        }
+
+        h2::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 22px;
+            background: var(--gold-accent);
+            margin-left: 12px;
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--blue-accent);
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        strong {
+            color: var(--navy-primary);
+            font-weight: 800;
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        ul {
+            padding-right: 20px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        /* --- 4. الصناديق والاقتباسات --- */
+        .box {
+            padding: 22px;
+            margin: 25px 0;
+            border-radius: 8px;
+            border-right-width: 5px;
+            border-right-style: solid;
+            font-size: 15px;
+        }
+
+        .info-box { background-color: var(--info-bg); border-right-color: var(--info-border); color: var(--info-text); }
+        .warning-box { background-color: var(--warn-bg); border-right-color: var(--warn-border); color: var(--warn-text); }
+        .highlight-box { background-color: var(--highlight-bg); border-right-color: var(--highlight-border); color: var(--highlight-text); }
+        
+        .pull-quote {
+            font-family: 'Amiri', serif;
+            font-size: 22px;
+            text-align: center;
+            color: var(--navy-primary);
+            padding: 30px;
+            margin: 40px 0;
+            border-top: 1px solid #EEE;
+            border-bottom: 1px solid #EEE;
+            background-color: #FAFAFA;
+            font-style: italic;
+            position: relative;
+        }
+        
+        .pull-quote::before {
+            content: '❝';
+            font-size: 60px;
+            color: var(--gold-accent);
+            opacity: 0.2;
+            position: absolute;
+            top: -10px;
+            right: 20px;
+        }
+
+        /* --- 5. تصميم الجداول الحسابية (سانت ليغو) --- */
+        .math-container {
+            background: white;
+            border: 2px solid #eee;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 30px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .math-header {
+            background: var(--navy-primary);
+            color: white;
+            padding: 12px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .math-body { padding: 20px; }
+
+        .calc-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px dashed #ccc;
+        }
+        .calc-row:last-child { border-bottom: none; }
+
+        .calc-label { font-weight: 700; font-size: 14px; }
+        
+        .calc-formula {
+            font-family: 'Roboto Mono', monospace;
+            background: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #666;
+            direction: ltr;
+            font-size: 12px;
+        }
+
+        .calc-result {
+            font-family: 'Roboto Mono', monospace;
+            font-weight: bold;
+            font-size: 16px;
+            color: var(--navy-primary);
+            direction: ltr;
+        }
+
+        .calc-winner {
+            color: #2e7d32;
+            background: #e8f5e9;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .party-badge {
+            padding: 8px 12px;
+            border-radius: 6px;
+            color: white;
+            font-weight: bold;
+            font-size: 13px;
+            display: inline-block;
+            min-width: 90px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .badge-a { background-color: var(--navy-primary); }
+        .badge-b { background-color: #00838f; }
+        .badge-c { background-color: #c62828; }
+
+        /* --- 6. تصميم الغلاف --- */
+        .cover-page {
+            background: linear-gradient(135deg, #0D1F33 0%, #1B3B5F 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            border: 15px solid white;
+        }
+
+        .cover-pattern {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            opacity: 0.05;
+            background-image: radial-gradient(#C59848 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .cover-content {
+            z-index: 2;
+            border: 2px solid rgba(197, 152, 72, 0.5);
+            padding: 50px 30px;
+            border-radius: 4px;
+            background: rgba(16, 42, 68, 0.8);
+            backdrop-filter: blur(5px);
+            max-width: 80%;
+        }
+
+        .cover-title {
+            font-size: 64px;
+            color: var(--gold-accent);
+            margin-bottom: 10px;
+            line-height: 1.2;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        .cover-subtitle {
+            font-size: 20px;
+            color: #eee;
+            margin-top: 20px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .cover-icon-container {
+            margin-bottom: 40px;
+            width: 120px;
+            height: 120px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid var(--gold-accent);
+        }
+
+        /* --- 7. الفواصل والفهرس --- */
+        .chapter-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border: 8px double var(--gold-accent);
+        }
+
+        .chapter-num {
+            font-size: 100px;
+            font-weight: 900;
+            color: #eee;
+            line-height: 1;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 0 var(--navy-primary);
+        }
+        .chapter-name {
+            font-size: 32px;
+            margin: 0;
+            color: var(--navy-primary);
+        }
+        .chapter-sub {
+            font-size: 18px;
+            color: var(--blue-accent);
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        .toc-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 5px;
+        }
+        .toc-title {
+            font-weight: 600;
+        }
+        .toc-page {
+            font-weight: bold;
+            color: var(--gold-accent);
+        }
+
+        /* --- 8. بطاقات العمل (Active Citizen) --- */
+        .action-card {
+            background: #fff;
+            border-right: 4px solid var(--navy-primary);
+            padding: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .action-icon {
+            font-size: 24px;
+            margin-left: 15px;
+            color: var(--gold-accent);
+        }
+
+        /* --- 9. التذييل --- */
+        .footer {
+            position: absolute;
+            bottom: 15mm;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #aaa;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+
+        @media print {
+            body { padding: 0; background: white; }
+            .page { box-shadow: none; margin: 0; page-break-after: always; width: 100%; }
+            .cover-page, .math-header, .party-badge { -webkit-print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الغلاف -->
+    <div class="page cover-page">
+        <div class="cover-pattern"></div>
+        
+        <div class="cover-icon-container">
+            <!-- رمز مجرد يمثل التوازن والدولة -->
+            <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 10 V90 M10 50 H90" stroke="#C59848" stroke-width="2"/>
+                <circle cx="50" cy="50" r="30" stroke="#C59848" stroke-width="2"/>
+                <circle cx="50" cy="50" r="10" fill="#C59848" opacity="0.5"/>
+            </svg>
+        </div>
+
+        <div class="cover-content">
+            <h1 class="cover-title" style="border:none; margin:0; padding:0;">السياسة،<br>المجتمع، وأنت</h1>
+            <div style="width: 100px; height: 2px; background: var(--gold-accent); margin: 20px auto;"></div>
+            <p class="cover-subtitle">
+                دليل المواطن العراقي لفهم واقعه.. وتغييره<br>
+                <span style="font-size:16px; opacity:0.8">(من المحاصصة وسانت ليغو.. إلى بناء الدولة)</span>
+            </p>
+        </div>
+
+        <div style="position: absolute; bottom: 30mm; z-index: 2;">
+            <p style="opacity: 0.8; font-size: 18px;">إعداد: الياس الشرار | 2025</p>
+            <p style="font-size: 14px; opacity: 0.6;">مستخلص من محاضرات في علم الاجتماع السياسي ومن الواقع</p>
+        </div>
+    </div>
+
+    <!-- الفهرس التفاعلي -->
+    <div class="page">
+        <h1 style="text-align: center; width: 100%;">فهرس المحتويات</h1>
+        <div style="max-width: 700px; margin: 50px auto;">
+            
+            <h3 style="border-bottom: 2px solid #eee; padding-bottom: 5px;">الفصل الأول: النظام السياسي العراقي</h3>
+            <div class="toc-item">
+                <span class="toc-title"><a href="#ch1-game-rules">فهم قواعد اللعبة</a></span>
+                <span class="toc-page">5</span>
+            </div>
+            <div class="toc-item">
+                <span class="toc-title"><a href="#ch1-nizam">طبيعة النظام: لماذا البرلمان هو قلب النظام؟</a></span>
+                <span class="toc-page">6</span>
+            </div>
+            <div class="toc-item">
+                <span class="toc-title"><a href="#ch1-lost-votes">أين تضيع أصوات الناخبين؟</a></span>
+                <span class="toc-page">7</span>
+            </div>
+            <div class="toc-item">
+                <span class="toc-title"><a href="#ch1-muhasasa">المحاصصة والتوافقية: العرف الذي غلب الدستور</a></span>
+                <span class="toc-page">8</span>
+            </div>
+            <div class="toc-item">
+                <span class="toc-title"><a href="#ch1-separation">الفصل بين السلطات</a></span>
+                <span class="toc-page">9</span>
+            </div>
+            <div class="toc-item">
+                <span class="toc-title"><a href="#ch1-president">عقدة انتخاب الرئيس</a></span>
+                <span class="toc-page">10</span>
+            </div>
+
+            <h3 style="border-bottom: 2px solid #eee; padding-bottom: 5px; margin-top: 30px;">الفصل الثاني: المجتمع والدولة</h3>
+            <div class="toc-item">
+                <span class="toc-title"><a href="#ch2-diversity">التنوع نعمة، أم نقمة سياسية؟</a></span>
+                <span class="toc-page">12</span>
+            </div>
+            <div class="toc-item">
+                <span class="toc-title"><a href="#ch2-components">فخ المكونات: تمثيل عادل أم إقطاعيات سياسية؟</a></span>
+                <span class="toc-page">13</span>
+            </div>
+            <div class="toc-item">
+                <span class="toc-title"><a href="#ch2-majority">الأغلبية السياسية مقابل الأغلبية السكانية</a></span>
+                <span class="toc-page">14</span>
+            </div>
+            <div class="toc-item">
+                <span class="toc-title"><a href="#ch2-federalism">الفيدرالية واللامركزية</a></span>
+                <span class="toc-page">15</span>
+            </div>
+            <div class="toc-item">
+                <span class="toc-title"><a href="#ch2-tribe-religion">العشيرة والدين في فضاء السياسة</a></span>
+                <span class="toc-page">16</span>
+            </div>
+
+            <h3 style="border-bottom: 2px solid #eee; padding-bottom: 5px; margin-top: 30px;">الفصل الثالث: الماكينة الانتخابية</h3>
+            <div class="toc-item">
+                <span class="toc-title"><a href="#ch3-league">أسرار سانت ليغو 1.7</a></span>
+                <span class="toc-page">18</span>
+            </div>
+            <div class="toc-item">
+                <span class="toc-title"><a href="#ch3-battle">معركة المقاعد الثلاثة</a></span>
+                <span class="toc-page">19</span>
+            </div>
+            <div class="toc-item">
+                <span class="toc-title"><a href="#ch3-list-system">نظام القائمة (قاطرة ومقطورة)</a></span>
+                <span class="toc-page">20</span>
+            </div>
+
+            <h3 style="border-bottom: 2px solid #eee; padding-bottom: 5px; margin-top: 30px;">الفصل الرابع: اللاعبون في الظلام</h3>
+            <div class="toc-item">
+                <span class="toc-title"><a href="#ch4-money-weapon">المال السياسي والسلاح</a></span>
+                <span class="toc-page">22</span>
+            </div>
+            <div class="toc-item">
+                <span class="toc-title"><a href="#ch4-e-army">الجيوش الإلكترونية</a></span>
+                <span class="toc-page">23</span>
+            </div>
+
+            <h3 style="border-bottom: 2px solid #eee; padding-bottom: 5px; margin-top: 30px;">الفصل الخامس: المواطن الفعال</h3>
+            <div class="toc-item">
+                <span class="toc-title"><a href="#ch5-active-citizen">الفرق بين الساكن والمواطن</a></span>
+                <span class="toc-page">25</span>
+            </div>
+            <div class="toc-item">
+                <span class="toc-title"><a href="#ch5-tools">أدواتك للتغيير</a></span>
+                <span class="toc-page">26</span>
+            </div>
+            <div class="toc-item">
+                <span class="toc-title"><a href="#ch5-civil-society">المجتمع المدني</a></span>
+                <span class="toc-page">27</span>
+            </div>
+            <div class="toc-item">
+                <span class="toc-title"><a href="#ch5-what-to-do">ماذا أفعل غداً؟</a></span>
+                <span class="toc-page">28</span>
+            </div>
+        </div>
+        <div class="footer">2</div>
+    </div>
+
+    <!-- الفصل الأول: صفحة فصل -->
+    <div class="page chapter-page" id="ch1">
+        <div class="chapter-num">1</div>
+        <h1 class="chapter-name">النظام السياسي العراقي.. كيف تدار الدولة؟</h1>
+        <p class="chapter-sub">(بين النصوص الدستورية والواقع السياسي)</p>
+    </div>
+
+    <!-- الفصل الأول: المحتوى -->
+    <div class="page">
+        <h1 id="ch1-game-rules">فهم قواعد اللعبة</h1>
+
+        <p>
+            كثيرًا ما يشعر المواطن العراقي بالإحباط عند مراقبة المشهد السياسي: انتخابات تجري، ثم أشهر طويلة من
+            <strong>المفاوضات</strong> والصراعات، وفي النهاية تتشكل حكومة قد لا تعكس النتائج الأولية التي أفرزتها الصناديق.
+        </p>
+
+        <p>
+            لكي نفهم <strong>لماذا يحدث هذا؟</strong>، لا بد أن نفكك قواعد النظام السياسي العراقي، ونميز بين ما هو نص دستوري،
+            وما هو تفسير قضائي، وما هو عرف سياسي.
+        </p>
+
+        <p>
+            هذا الفصل ليس سرداً قانونياً، بل هو شرح لـ <strong>الميكانيكية</strong> التي تعمل بها الدولة، لتعرف أين يقع صوتك
+            وموقعك في هذه الآلة المعقدة.
+        </p>
+
+        <h2 id="ch1-nizam">1. طبيعة النظام: لماذا البرلمان هو قلب النظام؟</h2>
+
+        <p>
+            العراق يعتمد <strong>النظام البرلماني</strong> (وليس الرئاسي). هذا الاختيار الدستوري يعني شيئاً جوهرياً واحداً:
+            <strong>شرعية الحكم كلها تنبع من مجلس النواب</strong>.
+        </p>
+
+        <div class="info-box box">
+            <strong>التسلسل الدستوري للسلطة:</strong><br>
+            المواطن يمنح صوته للنائب ← مجلس النواب ينتخب رئيس الجمهورية ← رئيس الجمهورية يكلف مرشح
+            <strong>الكتلة الأكبر</strong> ← مجلس النواب يصوت على منح الثقة للحكومة.
+        </div>
+
+        <p>
+            الإشكال هنا أن الحكومة في الأنظمة البرلمانية لا تستمد قوتها من الشعب مباشرة، بل من
+            <strong>الأغلبية البرلمانية</strong> الداعمة لها. لهذا السبب، نرى أن رئيس الوزراء يضطر دائماً لإرضاء الكتل السياسية في
+            البرلمان، لأنها تملك حق إقالته (سحب الثقة) في أي لحظة.
+        </p>
+
+        <p>
+            هذا التصميم الدستوري يجعل الحكومات <strong>ائتلافية</strong> غالباً، وصعبة التشكيل، وسهلة الابتزاز السياسي.
+        </p>
+
+        <h2 id="ch1-lost-votes">2. أين تضيع أصوات الناخبين؟</h2>
+
+        <p>
+            إحدى أكبر المعضلات التي يواجهها المواطن هي: <em>لماذا انتخبتُ القائمة (أ) وفازت بالمركز الأول، لكن القائمة (ب) هي التي
+            شكلت الحكومة؟</em>
+        </p>
+
+        <p>
+            هنا لا بد من توضيح الفرق بين <strong>الفائز الانتخابي</strong> و<strong>الفائز السياسي</strong> وفقاً لتفسيرات المحكمة
+            الاتحادية العليا:
+        </p>
+
+        <p><strong>النص الدستوري:</strong> المادة 76 تتحدث عن تكليف مرشح <strong>الكتلة النيابية الأكثر عدداً</strong>.</p>
+
+        <div class="highlight-box box">
+            <strong>التفسير القضائي (الإشكال):</strong><br>
+            فسرت المحكمة الاتحادية هذا النص بأنه لا يعني بالضرورة القائمة التي فازت بأعلى الأصوات في الانتخابات، بل قد تعني
+            <strong>الكتلة التي تتشكل داخل قبة البرلمان</strong> في الجلسة الأولى من خلال تحالف عدة قوائم.
+        </div>
+
+        <p>
+            ماذا يعني هذا للمواطن؟ هذا يعني أن نتائج الانتخابات هي <strong>نصف المعركة</strong> فقط. النصف الآخر يجري في غرف
+            المفاوضات لتجميع التحالفات.
+        </p>
+
+        <p>
+            لذا، فإن صوتك يحدد <strong>أحجام</strong> القوى السياسية، لكن <strong>براعة التفاوض</strong> هي التي تحدد من يحكم. هذا
+            ليس تزويراً بالمعنى الفني، بل هو <strong>تطبيق</strong> لتفسير قانوني يمنح الأولوية للقدرة على جمع المقاعد داخل البرلمان.
+        </p>
+
+        <h2 id="ch1-muhasasa">3. المحاصصة والتوافقية: العرف الذي غلب الدستور</h2>
+
+        <p>
+            الدستور العراقي يتحدث عن <strong>مكونات الشعب العراقي</strong> وعن <strong>التوازن</strong>، لكنه لم يؤسس لنظام
+            المحاصصة الدقيق المعمول به حالياً (رئاسة للشيعة، رئاسة للسنة، رئاسة للكرد).
+        </p>
+
+        <p>
+            <strong>كيف تحول التوازن إلى محاصصة؟</strong><br>
+            لجأت القوى السياسية بعد 2003 إلى مفهوم <strong>الديمقراطية التوافقية</strong>. الفكرة الأساسية هي أن المجتمع العراقي
+            منقسم، ولا يمكن لطرف واحد أن يحكم حتى لو فاز بالأغلبية (خشية التفرد والديكتاتورية).
+        </p>
+
+        <div class="warning-box box">
+            <strong>النتيجة الواقعية:</strong><br>
+            تحول <strong>التوافق</strong> إلى <strong>فيتو</strong> متبادل. كل طرف يملك القدرة على تعطيل الدولة إذا لم يحصل على
+            حصته. هذا النظام يضمن <strong>مشاركة الجميع</strong>، ولكنه يقتل <strong>المسؤولية والمحاسبة</strong>.
+            فعندما يفشل قطاع معين، يتنصل الجميع من المسؤولية بحجة أن القرار كان <strong>توافقياً</strong> أو أن الوزير
+            <strong>مفروض من كتلته</strong>.
+        </div>
+
+        <h2 id="ch1-separation">4. الفصل بين السلطات</h2>
+
+        <p>
+            يواجه الناخب إشكالاً كبيراً في فهم دور النائب، وغالباً ما يقيمه بناءً على <strong>الخدمات</strong> (تبليط، تعيينات،
+            محولات كهرباء). هذا الفهم الخاطئ يستغله السياسيون، ولكنه يدمر النظام السياسي. لماذا؟
+        </p>
+
+        <div class="info-box box">
+            <ul>
+                <li><strong>السلطة التشريعية (النائب):</strong> وظيفتها <strong>الرقابة</strong>. النائب هو <strong>عين الشعب</strong> على المال العام.</li>
+                <li><strong>السلطة التنفيذية (الحكومة/المحافظ):</strong> وظيفتها <strong>الصرف والتنفيذ</strong>. هي التي تملك الموازنة والآليات.</li>
+            </ul>
+        </div>
+
+        <p>
+            أين الخلل؟ عندما يعدك النائب بتبليط شارع، فهو فعلياً لا يملك صلاحية قانونية لذلك. لكي ينفذ وعده، سيضطر لمقايضة دوره
+            الرقابي مع المسؤول التنفيذي (يقول للوزير: <em>نفذ لي هذا المشروع لمنطقتي، وسأغض النظر عن استجوابك أو فسادك</em>).
+        </p>
+
+        <p>
+            هنا يتحول النظام من <strong>رقابة ومحاسبة</strong> إلى <strong>تخادم ومصالح</strong>. النائب الذي يغرق في الخدمات
+            الشخصية، يفقد بالضرورة قدرته على حماية المال العام للدولة ككل.
+        </p>
+
+        <h2 id="ch1-president">5. عقدة انتخاب الرئيس</h2>
+
+        <p>
+            من الضروري فهم نقطة فنية تعطل تشكيل الحكومات، وهي <strong>نصاب انتخاب رئيس الجمهورية</strong>. الدستور يشترط حضور
+            <strong>ثلثي أعضاء البرلمان</strong> لانتخاب الرئيس في الجولة الأولى (حوالي 220 نائباً).
+        </p>
+
+        <p>
+            هذا الرقم الكبير يعطي القدرة لأي كتلة تملك <strong>الثلث</strong> (تسمى الثلث الضامن أو المعطل) أن تقاطع الجلسة
+            وتوقف عملية تشكيل الحكومة برمتها حتى يتم التفاوض معها.
+        </p>
+
+        <p>
+            هذا يفسر لماذا تستمر فترات <strong>تصريف الأعمال</strong> لأشهر طويلة؛ فالنظام مصمم بطريقة تجبر الأغلبية على التفاوض
+            مع الأقلية الكبيرة، ولا تسمح للأغلبية بالانفراد بالقرار بسهولة.
+        </p>
+
+        <p>
+            النظام السياسي العراقي نظام مركب ومعقد، يمزج بين آليات الديمقراطية (الانتخابات) وبين قيود التوافقية (المحاصصة والثلث
+            المعطل). فهمك لهذه الآليات يجعلك تدرك أن <strong>التغيير</strong> لا يأتي بمجرد استبدال الوجوه، بل يتطلب وجود
+            <strong>أغلبية برلمانية متماسكة</strong> قادرة على تحقيق النصاب وتشكيل الحكومة، ووجود <strong>معارضة قوية</strong>
+            تراقبها، والأهم من ذلك، وعي شعبي يفرق بين النائب المشرّع و<strong>المسؤول المنفذ</strong>.
+        </p>
+
+        <div class="footer">5</div>
+    </div>
+
+    <!-- الفصل الثاني: صفحة فصل -->
+    <div class="page chapter-page" id="ch2">
+        <div class="chapter-num">2</div>
+        <h1 class="chapter-name">المجتمع والدولة.. بين الهوية والمواطنة</h1>
+        <p class="chapter-sub">(المكونات، الأغلبية، والفيدرالية: كيف ندير تنوعنا؟)</p>
+    </div>
+
+    <!-- الفصل الثاني: المحتوى -->
+    <div class="page">
+        <h1 id="ch2-diversity">التنوع نعمة، أم نقمة سياسية؟</h1>
+
+        <p>
+            العراق بلد متنوع، هذه حقيقة تاريخية وجغرافية. لكن الإشكال الذي نواجهه اليوم ليس في وجود
+            <strong>الطوائف والقوميات</strong>، بل في تحول هذه الهويات الاجتماعية إلى <strong>متاريس سياسية</strong>.
+        </p>
+
+        <p>
+            في النظام الديمقراطي السليم، يذهب المواطن لصندوق الاقتراع ليختار <strong>برنامجاً</strong> (صحة، تعليم، اقتصاد).
+            أما في العراق، فغالباً ما يتم دفع المواطن ليختار <strong>حامياً</strong> لهويته أو طائفته.
+        </p>
+
+        <p>
+            في هذا الفصل، سنناقش كيف أثرت هندسة المجتمع على شكل الدولة، ونصحح مفاهيم مغلوطة حول الأغلبية والفيدرالية.
+        </p>
+
+        <h2 id="ch2-components">1. فخ المكونات: تمثيل عادل أم إقطاعيات سياسية؟</h2>
+
+        <p>
+            بعد عام 2003، بُني النظام السياسي على فكرة أساسية: <strong>يجب أن يكون الجميع ممثلاً في السلطة لضمان عدم عودة
+            الديكتاتورية</strong>. هذه الفكرة نظرياً عادلة، لكن تطبيقها أنتج ما يعرف بـ <strong>ديمقراطية المكونات</strong>.
+        </p>
+
+        <p><strong>أين الخلل في هذا النموذج؟</strong></p>
+
+        <p><strong>اختزال المكون في حزب:</strong> أصبح الحزب السياسي يدعي أنه هو <strong>الممثل الشرعي والوحيد</strong> للطائفة أو القومية.</p>
+
+        <p>
+            فإذا انتقدتَ فساد وزير معين، يخرج حزبه ليقول: <em>هذا استهداف للمكون الفلاني!</em>، مستخدماً الهوية كدرع لحماية
+            الفساد.
+        </p>
+
+        <p>
+            <strong>الخوف المتبادل:</strong> تتغذى الأحزاب التقليدية على <strong>الخوف</strong> عند الناس. يتم إقناع الناخب بأن
+            <strong>الآخرين</strong> يريدون إلغاءه، وأن بقاء هذا الزعيم هو الضمانة الوحيدة للوجود. هذا الخطاب يعطل العقل النقدي،
+            ويجعل الانتخاب مبنياً على العاطفة والهوية لا على الكفاءة والخدمات.
+        </p>
+
+        <h2 id="ch2-majority">2. الأغلبية السياسية مقابل الأغلبية السكانية</h2>
+
+        <p>
+            واحدة من أكثر المفاهيم التي تسبب لغطاً في الشارع العراقي هي <strong>الأغلبية</strong>. يجب أن نميز بدقة بين نوعين:
+        </p>
+
+        <div class="info-box box">
+            <ul>
+                <li>
+                    <strong>الأغلبية السكانية (الديموغرافية):</strong>
+                    هي حقيقة رقمية (عدد الشيعة، السنة، الكرد، التركمان... إلخ). هذه أغلبية اجتماعية ثابتة نسبياً ومحترمة، لكن لا يصح أن تكون
+                    معياراً لإدارة الدولة الحديثة.
+                </li>
+                <li>
+                    <strong>الأغلبية السياسية (البرلمانية):</strong>
+                    هذا هو هدف الديمقراطية. هي أن يتفق حزب شيعي، مع حزب سني، مع حزب كردي، ومدني، على
+                    <strong>برنامج حكومي موحد</strong>، فيشكلون <strong>كتلة أغلبية</strong> في البرلمان تحكم، ويذهب الباقون إلى
+                    <strong>المعارضة</strong>.
+                </li>
+            </ul>
+        </div>
+
+        <p>
+            <strong>الواقع العراقي:</strong> نحن عالقون في <strong>الأغلبية السكانية</strong>. التحالفات غالباً ما تُبنى على أساس
+            <strong>البيت الشيعي</strong> و<strong>البيت السني</strong> و<strong>البيت الكردي</strong>.
+        </p>
+
+        <p>
+            لكي نصل إلى دولة مستقرة، يجب أن تتفكك هذه البيوت لتتشكل <strong>بيوت وطنية</strong> مبنية على أساس الأفكار
+            (يمين، يسار، ليبرالي، إسلامي) وليس على أساس المذهب والقومية.
+        </p>
+
+        <h2 id="ch2-federalism">3. الفيدرالية واللامركزية</h2>
+
+        <p>
+            كلمة <strong>فيدرالية</strong> تثير الرعب لدى شريحة واسعة من العراقيين، حيث يربطونها فوراً بـ <strong>التقسيم</strong>.
+            لنضع النقاط على الحروف قانونياً وإدارياً:
+        </p>
+
+        <p>
+            <strong>الفيدرالية (الاتحادية):</strong> هي نظام إدارة، وليست انفصالاً. الدستور العراقي أقر الفيدرالية (كما في إقليم
+            كردستان). الفكرة منها هي منح أقاليم معينة صلاحيات تشريعية وتنفيذية واسعة لإدارة شؤونهم بأنفسهم، مع بقاء السيادة
+            الخارجية والعملة والجيش بيد <strong>المركز</strong> (بغداد).
+        </p>
+
+        <p>
+            <strong>اللامركزية الإدارية (قانون المحافظات):</strong> هذا ما يخص بقية محافظات العراق. الفكرة هي
+            <strong>نقل الصلاحيات</strong>.
+        </p>
+
+        <p>
+            <em>المثال العملي:</em> هل يُعقل أن يحتاج مدير مدرسة في البصرة إلى توقيع وزير في بغداد لترميم سياج المدرسة؟ اللامركزية
+            تعني منح الحكومات المحلية (مجلس المحافظة والمحافظ) صلاحية إدارة ملفات (الصحة، التربية، البلديات) دون الرجوع لبغداد في
+            كل صغيرة وكبيرة.
+        </p>
+
+        <div class="highlight-box box">
+            <strong>الإشكال التطبيقي:</strong><br>
+            اللامركزية في العراق تعثرت لسببين:<br>
+            1) تمسك الوزارات في بغداد بالصلاحيات والتعيينات (لأغراض نفوذ سياسي).<br>
+            2) فساد بعض مجالس المحافظات وضعف خبرتها، مما جعل المواطن يطالب بعودة المركزية هرباً من الفساد المحلي.
+        </div>
+
+        <h2 id="ch2-tribe-religion">4. العشيرة والدين في فضاء السياسة</h2>
+
+        <p>
+            المجتمع العراقي يمتلك مرجعيات اجتماعية قوية (العشيرة والدين)، وهي تلعب دوراً حاسماً في توجيه السلوك السياسي:
+        </p>
+
+        <p>
+            <strong>العشيرة:</strong> هي مؤسسة اجتماعية للحماية والتكافل. لكن المشكلة تبدأ عندما تصبح <strong>بديلاً عن
+            الدولة</strong>. عندما يتدخل شيخ العشيرة لفرض مرشح للانتخابات، أو عندما تُستخدم <strong>الدكة العشائرية</strong> لتهديد
+            موظف دولة، هنا تتحول العشيرة من ركن اجتماعي داعم إلى عائق أمام سيادة القانون.
+        </p>
+
+        <p>
+            <strong>الدين والسياسة:</strong> الدستور العراقي يحترم الهوية الإسلامية للأغلبية. لكن الخلط يحدث بين
+            <strong>الدين</strong> كقيم عليا ومبادئ، وبين <strong>استغلال الرموز الدينية</strong> للدعاية الانتخابية.
+        </p>
+
+        <p>
+            الوعي السياسي يتطلب التمييز بين احترام المرجعية الدينية ومقامها، وبين تقييم أداء حزب إسلامي قد يصيب أو يخطئ في إدارة
+            وزارة خدمية. الفشل في تبليط شارع هو فشل <strong>إداري</strong> وليس فشلاً <strong>دينياً</strong>.
+        </p>
+
+        <h3>الطريق إلى المواطنة</h3>
+
+        <p>
+            الدولة لا تُبنى بـ <strong>مكونات</strong> خائفة من بعضها، بل بـ <strong>مواطنين</strong> يثقون بالقانون.
+        </p>
+
+        <ul>
+            <li>أن يكون <strong>القانون</strong> هو الحامي، فلا يضطر المواطن للاحتماء بطائفته أو عشيرته.</li>
+            <li>أن تكون <strong>الانتخابات</strong> مبنية على برامج عمل، فينتخب <strong>ابن الجنوب</strong> مرشحاً من
+                <strong>الغربية</strong> إذا كان برنامجه مقنعاً، والعكس صحيح.</li>
+            <li>أن نفهم أن <strong>اللامركزية</strong> هي حل إداري لتسريع الخدمات، وليست مؤامرة لتمزيق البلد، بشرط وجود رقابة حازمة.</li>
+        </ul>
+
+        <div class="footer">10</div>
+    </div>
+
+    <!-- الفصل الثالث: صفحة فصل -->
+    <div class="page chapter-page" id="ch3">
+        <div class="chapter-num">3</div>
+        <h1 class="chapter-name">الماكينة الانتخابية.. أسرار سانت ليغو 1.7</h1>
+        <p class="chapter-sub">(كيف تُسرق المقاعد بالقانون؟ وشرح نظام انتخابات 2025)</p>
+    </div>
+
+    <!-- الفصل الثالث: المحتوى 1 -->
+    <div class="page">
+        <h1 id="ch3-league">الغربال الذي يغير النتائج</h1>
+
+        <p>
+            في عام 2021، جربنا نظام <strong>الدوائر المتعددة</strong> (أعلى الفائزين)، حيث كان الفوز لمن يحصل على أصوات أكثر.
+            لكن الكتل السياسية الكبيرة شعرت بالخطر من صعود المستقلين، فقامت في عام 2023 بتعديل القانون والعودة إلى نظام
+            قديم-جديد يسمى <strong>سانت ليغو المعدل 1.7</strong>.
+        </p>
+
+        <p>
+            هذا النظام سيحكم الانتخابات النيابية القادمة (2025). المشكلة ليست في الاسم، بل في <strong>الرياضيات</strong> التي
+            صُممت خصيصاً لخدمة <strong>الحيتان الكبيرة</strong> وأكل <strong>الأسماك الصغيرة</strong>. تعال نحسبها بالورقة والقلم.
+        </p>
+
+        <h2>1. ما هو سانت ليغو؟ وكيف يعمل؟</h2>
+
+        <p>
+            هو نظام رياضي لتوزيع المقاعد. فكرته أن نقسم أصوات القوائم على أرقام محددة (قواسم) لنحصل على
+            <strong>النتائج</strong>. في النسخة العراقية الحالية، القاسم الأول هو <strong>(1.7)</strong>، ثم الأعداد الفردية
+            (3، 5، 7، 9... إلخ).
+        </p>
+
+        <p>
+            <strong>لماذا الرقم (1.7) كارثة على الصغار؟</strong><br>
+            لأن قسمة أصوات أي حزب على (1.7) في البداية تقلل قيمتها بشكل حاد جداً، مما يرفع <strong>عتبة الدخول</strong> للبرلمان.
+            هذا يجعل الحزب الصغير الذي يملك أصواتاً محترمة (لكنها ليست ضخمة) يفشل في الحصول على المقعد الأول، بينما يذهب هذا
+            المقعد للحزب الكبير كـ <strong>مقعد ثانٍ</strong> أو <strong>ثالث</strong>.
+        </p>
+
+        <h2 id="ch3-battle">2. معركة المقاعد الثلاثة</h2>
+
+        <p>
+            لنفترض أننا في دائرة انتخابية صغيرة مخصص لها <strong>3 مقاعد</strong> فقط. تنافست فيها ثلاث قوائم:
+        </p>
+
+        <ul>
+            <li><strong>القائمة الكبيرة (أ):</strong> حصلت على <strong>20,000</strong> صوت.</li>
+            <li><strong>القائمة المتوسطة (ب):</strong> حصلت على <strong>13,000</strong> صوت.</li>
+            <li><strong>القائمة الصغيرة/مستقلين (ج):</strong> حصلت على <strong>9,000</strong> صوت.</li>
+        </ul>
+
+        <p>
+            في النظام العادي (بدون 1.7)، القائمة (ج) يجب أن تأخذ مقعداً لأن لديها 9000 صوت. لكن انظر ماذا يفعل
+            <strong>سانت ليغو 1.7</strong>:
+        </p>
+
+        <div style="display:flex; gap:10px; justify-content:center; margin-bottom:20px;">
+            <span class="party-badge badge-a">القائمة (أ): 20,000</span>
+            <span class="party-badge badge-b">القائمة (ب): 13,000</span>
+            <span class="party-badge badge-c">القائمة (ج): 9,000</span>
+        </div>
+
+        <div class="math-container">
+            <div class="math-header">الجولة 1: القسمة على 1.7</div>
+            <div class="math-body">
+                <div class="calc-row">
+                    <span class="calc-label">القائمة (أ)</span>
+                    <span class="calc-formula">20,000 ÷ 1.7</span>
+                    <div><span class="calc-winner">مقعد 1</span><span class="calc-result">11,764</span></div>
+                </div>
+                <div class="calc-row">
+                    <span class="calc-label">القائمة (ب)</span>
+                    <span class="calc-formula">13,000 ÷ 1.7</span>
+                    <span class="calc-result" style="color:#999">7,647</span>
+                </div>
+                <div class="calc-row">
+                    <span class="calc-label">القائمة (ج)</span>
+                    <span class="calc-formula">9,000 ÷ 1.7</span>
+                    <span class="calc-result" style="color:#999">5,294</span>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            القائمة (أ) فازت بالمقعد الأول، فتخرج أصواتها وتقسم على (3). ننافس على المقعدين الباقيين:
+        </p>
+
+        <div class="math-container">
+            <div class="math-header">الجولة 2 و 3: توزيع المقاعد الباقية</div>
+            <div class="math-body">
+                <div class="calc-row">
+                    <span class="calc-label">القائمة (ب)</span>
+                    <span class="calc-formula">الرصيد السابق</span>
+                    <div><span class="calc-winner">مقعد 2</span><span class="calc-result">7,647</span></div>
+                </div>
+                <div class="calc-row">
+                    <span class="calc-label">القائمة (أ)</span>
+                    <span class="calc-formula">20,000 ÷ 3</span>
+                    <div><span class="calc-winner" style="background:#FFFDE7; color:#F57F17">مقعد 3</span><span class="calc-result">6,666</span></div>
+                </div>
+                <div class="calc-row">
+                    <span class="calc-label">القائمة (ج)</span>
+                    <span class="calc-formula">الرصيد السابق</span>
+                    <span class="calc-result" style="color:red">5,294</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="warning-box box">
+            <strong>النتيجة الصادمة:</strong><br>
+            المقعد الثالث يذهب للقائمة الكبيرة <strong>(أ)</strong> لأن رقمها (6,666) أكبر من رقم القائمة الصغيرة (5,294).<br>
+            <strong>القائمة (أ):</strong> مقعدان.<br>
+            <strong>القائمة (ب):</strong> مقعد واحد.<br>
+            <strong>القائمة (ج):</strong> صفر مقاعد (رغم أن لديها 9000 صوت!).<br><br>
+            الخلاصة: الـ 9000 مواطن الذين صوتوا للقائمة (ج) ضاعت أصواتهم، وذهبت مقاعدهم للقائمة الكبيرة بفضل فلسفة الـ 1.7.
+        </div>
+
+        <div class="footer">16</div>
+    </div>
+
+    <!-- الفصل الثالث: المحتوى 2 -->
+    <div class="page">
+        <h2 id="ch3-list-system">3. نظام القائمة وآلية قاطرة ومقطورة</h2>
+
+        <p>
+            في انتخابات 2025 وفق هذا القانون، المحافظة ستكون <strong>دائرة واحدة</strong>. أنت ستصوت للقائمة، ثم تختار مرشحاً منها.
+            هذا النظام يخلق ما يسمى بـ <strong>المُرشح القاطرة</strong>.
+        </p>
+
+        <p>
+            يوضع زعيم سياسي معروف (أو شخصية عشائرية قوية) في القائمة ليجمع مثلاً 50 ألف صوت. هو يحتاج 15 ألفاً فقط ليصعد.
+            الـ 35 ألف صوت الزائدة لا تضيع، بل تتحول تلقائياً لتصعيد المرشحين الآخرين في نفس قائمته (أشخاص لم ينتخبهم أحد، وربما
+            حصلوا على 200 صوت فقط!).
+        </p>
+
+        <p>
+            هكذا يضمن الزعيم صعود <strong>أتباع</strong> يرفعون يدهم في البرلمان بأمره، لأن فضل صعودهم يعود لأصواته هو، وليس
+            لأصوات الناس لهم.
+        </p>
+
+        <h2>4. لماذا عادوا لهذا النظام؟</h2>
+
+        <p>الكتل السياسية الكبيرة المتنفذة صممت هذا القانون لسببين رئيسيين:</p>
+
+        <ul>
+            <li><strong>قتل المستقلين:</strong> المستقل لا يستطيع جمع أصوات تنافس <strong>قسمة 1.7</strong>، فيضطر إما للانسحاب أو الانضمام للأحزاب الكبيرة.</li>
+            <li><strong>وحدة القرار الحزبي:</strong> نظام الدوائر المتعددة (2021) أنتج نواباً يهتمون بمناطقهم أكثر من أحزابهم. الكتل تريد العودة لنظام القائمة المركزية ليكون ولاء النائب لرئيس الكتلة وليس للجمهور.</li>
+        </ul>
+
+        <h2>5. كيف نتعامل كمواطنين مع هذا اللغم؟</h2>
+
+        <p>
+            هل يعني هذا القانون أن نستسلم ونقاطع؟ بالعكس، الرياضيات تقول العكس: بما أن النظام يعتمد على
+            <strong>جمع الأصوات</strong> في قائمة واحدة، فإن الحل الوحيد لمواجهة الأحزاب الكبيرة هو <strong>التنظيم</strong>.
+        </p>
+
+        <p>
+            إذا تشتتت أصوات الشباب والمستقلين على 50 قائمة صغيرة، سيأكلهم <strong>سانت ليغو</strong> جميعاً.
+        </p>
+
+        <p>
+            إذا توحدت هذه القوى في قائمة كبيرة واحدة، ستمتلك <strong>رقماً كبيراً</strong> يقاوم القسمة على 1.7، وتنافس الأحزاب
+            بنفس سلاحها.
+        </p>
+
+        <div class="highlight-box box">
+            <strong>المشاركة الكثيفة:</strong><br>
+            كلما زاد عدد المشاركين، ارتفعت <strong>العتبة الانتخابية</strong> (سعر المقعد)، مما يجعل مهمة الأحزاب في تشتيت المقاعد
+            أصعب. المقاطعة تخفض سعر المقعد وتجعل الـ 1.7 يعمل لصالحهم بأريحية تامة.
+        </div>
+
+        <div class="footer">17</div>
+    </div>
+
+    <!-- الفصل الرابع: صفحة فصل -->
+    <div class="page chapter-page" id="ch4">
+        <div class="chapter-num">4</div>
+        <h1 class="chapter-name">اللاعبون في الظلام.. المال، السلاح، والجيوش الإلكترونية</h1>
+        <p class="chapter-sub">(أدوات اللعب غير النظيف وكيف تحمي عقلك وصوتك)</p>
+    </div>
+
+    <!-- الفصل الرابع: المحتوى -->
+    <div class="page">
+        <h1>مباراة بملعب مائل</h1>
+
+        <p>
+            تحدثنا في الفصل السابق عن <strong>القانون</strong> (سانت ليغو)، لكن هل تجري الانتخابات في العراق وفق القانون فقط؟
+            الواقع يقول: لا.
+        </p>
+
+        <p>
+            تخيل مباراة كرة قدم؛ الفريق الأول يلعب بمهارته فقط، والفريق الثاني اشترى الحكم (المال)، ويحمل سكاكين تحت الملابس
+            (السلاح)، ولديه جمهور مزيف يصرخ ويشتم الفريق الأول (الإعلام المضلل). هذا هو واقع المنافسة بين
+            <strong>القوى التقليدية المتنفذة</strong> وبين <strong>القوى الناشئة أو المستقلة</strong>.
+        </p>
+
+        <p>
+            في هذا الفصل، سنكشف أوراق اللعب غير النظيف.
+        </p>
+
+        <h2 id="ch4-money-weapon">1. المال السياسي: سرقة المستقبل بـ بطانية!</h2>
+
+        <p>
+            المال السياسي هو <strong>الوقود</strong> الذي يشغل ماكينة الأحزاب الكبيرة. لكن من أين يأتي؟ وأين يذهب؟
+        </p>
+
+        <p>
+            <strong>مصادر المال:</strong> أغلب هذا المال ليس تبرعات من أعضاء الحزب، بل هو غالباً <strong>مال عام</strong> تم
+            الاستيلاء عليه عبر <strong>الكوميشنات</strong> (العمولات) من عقود الوزارات والمشاريع الفاسدة طوال السنوات الأربع
+            الماضية.
+        </p>
+
+        <p><strong>كيف يُستخدم ضدك؟</strong></p>
+
+        <ul>
+            <li>
+                <strong>شراء الذمم المباشر:</strong> استغلال حاجة الفقراء وتوزيع (كارتات رصيد، بطانيات، وعود بالرعاية الاجتماعية)
+                قبل الانتخابات بأسبوع.
+            </li>
+            <li>
+                <strong>خدعة الزفت الانتخابي:</strong> فجأة، وقبل الانتخابات بشهر، ترى آليات الدولة تبلط شارعك! المرشح (المسؤول)
+                يوهمك أن هذا إنجازه، بينما هو يستخدم <strong>ميزانية الدولة وآلياتها</strong> للدعاية لنفسه.
+            </li>
+        </ul>
+
+        <div class="warning-box box">
+            <strong>قاعدة ذهبية:</strong><br>
+            المرشح الذي يدفع لك 50 ألف دينار ليشتري صوتك، سيستردها منك أضعافاً مضاعفة عبر سرقة خدماتك (صحة، تعليم، طرق) لأربع
+            سنوات قادمة. هو لا يعطيك مالاً، هو يشتري <strong>صمتك</strong> مقدماً.
+        </div>
+
+        <h2>2. السلاح: عندما يصوّت الخوف بدلاً منك</h2>
+
+        <p>
+            في علم الاجتماع السياسي، الدولة فقط هي من يجب أن تملك السلاح (احتكار القوة). في العراق، السلاح موزع. كيف يؤثر السلاح
+            على الانتخابات؟
+        </p>
+
+        <p>ليس بالضرورة عبر القتل، بل عبر <strong>الترهيب الناعم</strong>:</p>
+
+        <ul>
+            <li>
+                <strong>منع المنافسة:</strong> في مناطق نفوذ جهات مسلحة معينة، يُمنع المرشحون المستقلون أو المنافسون من تعليق
+                صورهم، أو تُحرق مقراتهم، أو يهددون عائلاتهم. النتيجة: الساحة تفرغ لجهة واحدة.
+            </li>
+            <li>
+                <strong>توجيه العشيرة:</strong> في بعض المناطق، يتم استخدام نفوذ السلاح للضغط على شيوخ العشائر لإجبار أبنائهم على
+                التصويت لجهة محددة تجنباً للمشاكل.
+            </li>
+        </ul>
+
+        <p>
+            <strong>الحل؟</strong> تذكر دائماً أن <strong>كابينة الاقتراع</strong> هي المكان الوحيد الذي لا تدخله البندقية. أنت
+            وحدك خلف الستارة، وصوتك سري. الخوف ينتهي عند باب المركز الانتخابي.
+        </p>
+
+        <h2 id="ch4-e-army">3. الجيوش الإلكترونية</h2>
+
+        <p>
+            أخطر سلاح في معركة اليوم ليس البندقية، بل <strong>الموبايل</strong>. الأحزاب تنفق ملايين الدولارات على ما يسمى
+            <strong>الذباب الإلكتروني</strong>. هؤلاء ليسوا مواطنين يعبرون عن رأيهم، بل موظفون في غرف مظلمة يديرون آلاف الحسابات
+            الوهمية.
+        </p>
+
+        <p><strong>ما هي وظيفتهم؟</strong></p>
+
+        <ul>
+            <li>
+                <strong>التسقيط السياسي:</strong> نشر فضائح (مفبركة أو حقيقية) وصور خاصة للمرشحين المنافسين لتشويه سمعتهم وإسقاطهم
+                اجتماعياً (خاصة ضد المرشحات النساء).
+            </li>
+            <li>
+                <strong>صناعة اليأس:</strong> نشر تعليقات مكثفة مثل: <em>الانتخابات محسومة، ماكو فايدة، كلهم حرامية</em>.. الهدف
+                ليس نقد الوضع، بل دفعك أنت (المواطن الواعي) لليأس والمقاطعة، لكي تخلو الساحة لجمهورهم المتحزب.
+            </li>
+            <li>
+                <strong>التطبيل:</strong> تلميع صورة مسؤول فاسد وتصويره كـ <strong>بطل قومي</strong> عبر آلاف التعليقات الوهمية
+                التي تمتدحه.
+            </li>
+        </ul>
+
+        <p>
+            <strong>كيف تكشفهم؟</strong> عندما ترى مئات التعليقات المتشابهة (نسخ/لصق) في نفس الدقيقة، أو حسابات بلا صور شخصية
+            وبأسماء غريبة تهاجم شخصاً محدداً وتدافع عن آخر باستماتة.. فاعلم أنك أمام <strong>جيش إلكتروني</strong> وليس رأياً عاماً
+            حقيقياً.
+        </p>
+
+        <h3>حصّن عقلك</h3>
+
+        <div class="info-box box">
+            <p>
+                المعركة الانتخابية في العراق غير متكافئة، هذا صحيح. الطرف الآخر يملك المال والسلاح والإعلام. لكنك تملك شيئاً واحداً
+                يرتعبون منه: <strong>الوعي</strong>.
+            </p>
+            <ul>
+                <li>عندما ترفض بيع بطاقتك الانتخابية.. أنت تهزم مالهم.</li>
+                <li>عندما تصوت خلف الستار بضميرك.. أنت تهزم سلاحهم.</li>
+                <li>عندما تميز بين الخبر الحقيقي والمنشور الممول.. أنت تهزم جيوشهم الإلكترونية.</li>
+            </ul>
+            <p>الانتخابات ليست مجرد ورقة تضعها في الصندوق، هي معركة إرادة لكسر هيمنة هؤلاء اللاعبين في الظلام.</p>
+        </div>
+
+        <div class="footer">19</div>
+    </div>
+
+    <!-- الفصل الخامس: صفحة فصل -->
+    <div class="page chapter-page" id="ch5">
+        <div class="chapter-num">5</div>
+        <h1 class="chapter-name">المواطن الفعال.. ماذا بيدك أن تفعل؟</h1>
+        <p class="chapter-sub">(خارطة طريق للتغيير السلمي: من التذمر إلى التأثير)</p>
+    </div>
+
+    <!-- الفصل الخامس: المحتوى -->
+    <div class="page">
+        <h1 id="ch5-active-citizen">1. الفرق بين الساكن والمواطن</h1>
+
+        <p>
+            لقد وصلنا إلى نهاية الرحلة. ربما تشعر الآن ببعض الثقل بعد أن عرفت حجم التعقيدات (محاصصة، سانت ليغو، مال سياسي).
+            قد يقول قائل: <em>الشك جبير والركعة زغيرة، شنو فائدة صوتي؟</em>
+        </p>
+
+        <p>
+            الجواب ببساطة: الأنظمة الفاسدة تراهن على <strong>يأسك</strong>. هم يريدونك أن تجلس في مقعد
+            <strong>المتفرج</strong> في السينما، تشاهد الفيلم، تسب المخرج، وتأكل الفشار، ثم تذهب للنوم.
+        </p>
+
+        <p>
+            <strong>المواطن الفعال</strong> هو الذي يقفز من مقعد المتفرج إلى <strong>خشبة المسرح</strong> ليغير النص. في هذا
+            الفصل، سنضع خطوات عملية: كيف تمارس السياسة وأنت في بيتك، وفي عملك، وليس فقط يوم الانتخابات.
+        </p>
+
+        <div class="info-box box">
+            <p>في علم الاجتماع السياسي، هناك فرق كبير بين:</p>
+            <ul>
+                <li>
+                    <strong>الساكن:</strong> شخص يعيش في العراق، يأكل ويشرب وينام، وعلاقته بالدولة هي <strong>الراتب والخدمات</strong>
+                    فقط. إذا انقطعت الكهرباء، يكتفي بالشتم.
+                </li>
+                <li>
+                    <strong>المواطن:</strong> شخص يدرك أنه <strong>شريك</strong> في ملكية هذا البلد. يعرف أن ميزانية الدولة هي
+                    ماله، وأن الموظف الحكومي (من الشرطي إلى الوزير) هو <strong>أجير</strong> لخدمته.
+                </li>
+            </ul>
+        </div>
+
+        <p><strong>أول خطوة للتغيير:</strong> توقف عن التصرف كضيف أو ساكن، وابدأ بالتصرف كـ <strong>مالك</strong> يراقب أملاكه.</p>
+
+        <h2 id="ch5-tools">2. أدواتك للتغيير</h2>
+
+        <p>
+            المشاركة السياسية لا تعني فقط أن تغمس إصبعك في الحبر البنفسجي كل 4 سنوات. هناك أدوات يومية:
+        </p>
+
+        <h3>أ. عينك ميزانك</h3>
+
+        <p>
+            اليوم، بفضل الهاتف الذكي، أصبح كل مواطن <strong>محطة إعلامية</strong>.
+        </p>
+
+        <ul>
+            <li>عندما تصور تبليطاً مغشوشاً وتنشره، أنت تمارس السياسة (الرقابة).</li>
+            <li>عندما تقدم شكوى رسمية على موظف مرتشٍ، أنت تحمي الدولة.</li>
+            <li>عندما تتابع جلسات مجلس المحافظة وتفضح غياب الأعضاء، أنت تضغط عليهم للعمل.</li>
+        </ul>
+
+        <h3>ب. قوة الجماعة</h3>
+
+        <p>
+            الصوت الواحد قد لا يُسمع، لكن <strong>الكورال</strong> يهز المسرح.
+        </p>
+
+        <ul>
+            <li>انضم للنقابات المهنية، الاتحادات الطلابية، أو حتى روابط الأحياء السكنية.</li>
+            <li>الدولة تخاف من <strong>المجاميع المنظمة</strong> أكثر من خوفها من الأفراد.</li>
+            <li>المطالبة بخدمات لمنطقتك عبر <strong>رابطة مجتمعية</strong> موقعة من 1000 شخص أقوى بمليون مرة من شكواك الفردية.</li>
+        </ul>
+
+        <h3>ج. دعم المعارضة الحقيقية</h3>
+
+        <p>
+            النظام السياسي الصحي يحتاج إلى جناحين: حكومة تعمل، ومعارضة تراقب. في العراق، تم تشويه مفهوم المعارضة وتصويرها
+            كـ <strong>عداء للدولة</strong>.
+        </p>
+
+        <p>
+            دورك كمواطن هو دعم الأصوات المعارضة (النواب المستقلين، الحركات الناشئة) حتى لو لم يفوزوا بالحكم. وجودهم في البرلمان
+            بصوت عالٍ يكشف الملفات، ويخيف الفاسدين، ويجعل الحكومة تحسب ألف حساب قبل تمرير صفقة مشبوهة.
+        </p>
+
+        <h2 id="ch5-civil-society">3. المجتمع المدني</h2>
+
+        <p>
+            يُساء فهم المجتمع المدني كثيراً. الكثير يظن أنه <strong>توزيع سلات غذائية</strong> فقط. المجتمع المدني هو
+            <strong>جماعات الضغط</strong>.
+        </p>
+
+        <ul>
+            <li>عندما يضغط <strong>اتحاد المحامين</strong> لتعديل قانون، هذا مجتمع مدني.</li>
+            <li>عندما تضغط <strong>منظمات البيئة</strong> لمنع تجريف البساتين، هذا مجتمع مدني.</li>
+        </ul>
+
+        <p>
+            دعمك لهذه المنظمات ومشاركتك فيها هو الذي يخلق <strong>مصدات</strong> تمنع الأحزاب من التغول على الدولة والمجتمع.
+        </p>
+
+        <h2 id="ch5-what-to-do">4. ماذا أفعل غداً؟</h2>
+
+        <div class="action-card">
+            <div class="action-icon">1</div>
+            <div><strong>حدّث بطاقتك:</strong> البايومترية هي سلاحك الوحيد. بدونها أنت مجرد <strong>رقم</strong> لا قيمة له في المعادلة.</div>
+        </div>
+
+        <div class="action-card">
+            <div class="action-icon">2</div>
+            <div><strong>لا تبع صوتك:</strong> لا ببطانية، ولا بتعيين وهمي، ولا بوعود كاذبة. صوتك هو كرامتك ومستقبل أولادك لأربع سنوات.</div>
+        </div>
+
+        <div class="action-card">
+            <div class="action-icon">3</div>
+            <div><strong>اقرأ القوانين:</strong> لا تصدق ما يقوله <em>البيج الفلاني</em>. اقرأ قانون الانتخابات بنفسك، افهم صلاحيات المحافظ بنفسك. الوعي هو الدرع.</div>
+        </div>
+
+        <div class="action-card">
+            <div class="action-icon">4</div>
+            <div><strong>حاسب، لا تُسقط:</strong> انتقد المسؤول الفاشل بالأدلة والأرقام، ولا تنجرف وراء حملات التسقيط الشخصي والشتائم التي تديرها الجيوش الإلكترونية.</div>
+        </div>
+
+        <div class="action-card">
+            <div class="action-icon">5</div>
+            <div><strong>شارك، ثم شارك:</strong> قاطع المنتجات الرديئة، لكن لا تقاطع الانتخابات. الانسحاب هو استسلام، والميدان لا يفرغ؛ إذا خرجت أنت، سيحتله الفاسد فوراً.</div>
+        </div>
+
+        <h3>الطريق طويل.. لكنه ممكن</h3>
+
+        <p>
+            بناء الدولة في العراق ليس عملية <strong>كبسة زر</strong>، ولا يتم بليلة وضحاها. الدول المستقرة التي نراها اليوم
+            (أوروبا، اليابان..) مرت بعقود من الفساد والصراعات قبل أن تستقر، لأن شعوبها قررت أن تكون <strong>واعية</strong>.
+        </p>
+
+        <p>
+            التغيير تراكمي. كل دورة انتخابية نزيد فيها نسبة الوعي، ونقلل نسبة الفاسدين، ونضغط لتعديل قانون، هي خطوة للأمام. أنت
+            لست مسؤولاً عن إصلاح الكون، أنت مسؤول عن <strong>مساحتك</strong>: وعيك، عائلتك، صوتك، وموقفك. إذا قام كل واحد منا
+            بإصلاح مساحته، سيُبنى الوطن.
+        </p>
+
+        <div class="pull-quote">
+            العراق يستحق أن نكون مواطنين.. لا سكاناً.
+        </div>
+
+        <div class="footer">22</div>
+    </div>
+
+    <!-- الخاتمة -->
+    <div class="page" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+        <h1 style="font-size:48px; border:none;">تم بحمد الله</h1>
+        
+        <div style="max-width:600px; margin-top:30px;">
+            <p>
+                هذا الكتاب ليس منهجاً دراسياً جافاً، ولا تنظيراً بعيداً عن الواقع. إنه
+                <strong>دليل تشغيلي</strong> للنظام السياسي العراقي، كُتب بلغة صريحة ومباشرة لكل مواطن عراقي يطمح لدولة تحترم كرامته.
+            </p>
+            
+            <div class="info-box box" style="text-align: right; margin-top:40px;">
+                <h3 style="color:var(--navy-primary); text-align:center;">عن هذا الكتاب</h3>
+                <ul style="line-height: 2;">
+                    <li>شرح <strong>الكتالوج</strong> الذي يُحكم به العراق (بين الدستور والمحاصصة).</li>
+                    <li>فك شيفرة القوانين الانتخابية بلغة الأرقام (كيف يُسرق المقعد بالقانون؟).</li>
+                    <li>كشف أدوات اللعب غير النظيف (المال السياسي والجيوش الإلكترونية).</li>
+                    <li>خارطة طريق عملية: ماذا بيدك أن تفعل لنتحول من <strong>سكان</strong> إلى <strong>مواطنين</strong>؟</li>
+                </ul>
+            </div>
+
+            <h3 style="margin-top:50px; font-size:24px; color:var(--gold-accent);">
+                السياسة تتدخل في رغيف خبزك، وفي تعبيد شارعك، وفي مستقبل أطفالك..<br>فلا تتركها لهم وحدهم.
+            </h3>
+        </div>
+        <div class="footer">النهاية</div>
+    </div>
+
+</body>
+</html>
